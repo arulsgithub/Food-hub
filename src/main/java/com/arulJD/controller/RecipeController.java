@@ -2,7 +2,6 @@ package com.arulJD.controller;
 
 import com.arulJD.entity.Recipe;
 import com.arulJD.entity.User;
-import com.arulJD.repository.UserRepository;
 import com.arulJD.service.RecipeService;
 import com.arulJD.service.UserService;
 import org.springframework.web.bind.annotation.*;

@@ -23,5 +23,6 @@ public class Recipe {
     private String image;
     private boolean vegetarian;
     private LocalDateTime createdAt;
+    @ElementCollection
     private List<Long> likes = new ArrayList<>();
 }
