@@ -1,4 +1,4 @@
-package com.arulJD.model;
+package com.arulJD.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,4 +17,5 @@ public class User {
     private String name;
     private String password;
     private String email;
+
 }

@@ -1,6 +1,6 @@
 package com.arulJD.repository;
 
-import com.arulJD.model.User;
+import com.arulJD.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
