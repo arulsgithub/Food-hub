@@ -16,10 +16,14 @@ public class Recipe {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+
+    @Column(length = 65535)
     private String description;
 
     @ManyToOne
     private User user;
+
+    @Column(length = 65535)
     private String image;
     private boolean vegetarian;
     private LocalDateTime createdAt;

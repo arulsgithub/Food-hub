@@ -26,6 +26,7 @@ public class RecipeServiceImpl implements RecipeService {
         createdRecipe.setDescription(recipe.getDescription());
         createdRecipe.setUser(user);
         createdRecipe.setCreatedAt(LocalDateTime.now());
+        createdRecipe.setVegetarian(recipe.isVegetarian());
         return recipeRepository.save(createdRecipe);
     }
 
@@ -53,6 +54,7 @@ public class RecipeServiceImpl implements RecipeService {
             updateRecipe.setName(recipe.getName());
             updateRecipe.setImage(recipe.getImage());
             updateRecipe.setDescription(recipe.getDescription());
+            updateRecipe.setVegetarian(recipe.isVegetarian());
             return recipeRepository.save(updateRecipe);
         }
         throw new Exception("Recipe not found with id: "+id);
@@ -71,6 +73,6 @@ public class RecipeServiceImpl implements RecipeService {
             recipe.getLikes().remove(user.getId());
         else
             recipe.getLikes().add(user.getId());
-        return null;
+        return recipeRepository.save(recipe);
     }
 }
