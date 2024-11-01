@@ -1,5 +1,6 @@
 package com.arulJD.service.impl;
 
+import com.arulJD.config.JWTProvider;
 import com.arulJD.entity.User;
 import com.arulJD.repository.UserRepository;
 import com.arulJD.service.UserService;
@@ -14,15 +15,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
 
-    @Override
-    public User createUser(User user) {
-        return userRepository.save(user);
-    }
-
-    @Override
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
-    }
+    @Autowired
+    private JWTProvider jwtProvider;
 
     @Override
     public User findUserById(Long id) throws Exception {
@@ -30,5 +24,17 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.findById(id).orElse(null);
         if(user != null) return user;
         throw new Exception("User not found with id: "+id);
+    }
+
+    @Override
+    public User findUserByJwt(String jwt) throws Exception {
+
+        String email = jwtProvider.getEmailFromToken(jwt);
+        if(email==null) throw new Exception("Invalid JWT token");
+
+        User user = userRepository.findByEmail(email);
+        if (user==null) throw new Exception("User not found with email: "+email);
+
+        return user;
     }
 }
