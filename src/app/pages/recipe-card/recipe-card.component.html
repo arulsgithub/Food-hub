@@ -19,16 +19,21 @@
     <mat-card-content>
         Chicken fried rice made in Indo Chinese style. Simple, easy to make & delicious fried rice made with tender chicken, soya sauce vinegar.
     </mat-card-content>
-    <mat-card-actions>
+    <mat-card-actions class="flex justify-between">
         <div>
             <button mat-icon-button aria-label="Example icon">
-                <mat-icon>favorite</mat-icon>
+                <mat-icon style="color:#5f9ea0">favorite</mat-icon>
+            </button>
+            <button (click)="handleEditRecipeForm()" mat-icon-button aria-label="Example icon">
+                <mat-icon style="color:#5f9ea0">edit</mat-icon>
             </button>
             <button mat-icon-button aria-label="Example icon">
-                <mat-icon>edit</mat-icon>
+                <mat-icon style="color:#5f9ea0">share</mat-icon>
             </button>
+        </div>
+        <div>
             <button mat-icon-button aria-label="Example icon">
-                <mat-icon>share</mat-icon>
+                <mat-icon style="color:#5f9ea0">delete</mat-icon>
             </button>
         </div>
     </mat-card-actions>
