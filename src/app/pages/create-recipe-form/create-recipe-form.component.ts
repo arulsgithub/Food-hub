@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule} from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { MatRadioButton, MatRadioGroup } from '@angular/material/radio';
-
+import { MatRadioModule } from '@angular/material/radio';
 
 @Component({
   selector: 'app-create-recipe-form',
@@ -14,22 +13,18 @@ import { MatRadioButton, MatRadioGroup } from '@angular/material/radio';
     MatFormFieldModule,
     FormsModule,
     MatButtonModule,
-    MatRadioButton,
-    MatRadioGroup
+    MatRadioModule
   ],
   templateUrl: './create-recipe-form.component.html',
-  styleUrl: './create-recipe-form.component.scss'
+  styleUrls: ['./create-recipe-form.component.scss']
 })
 export class CreateRecipeFormComponent {
-
-  recipeItem:any = {
-    title:"",
-    description:"",
-    foodType:"",
-    image:""
-  }
-
-  onSubmit(){
-    console.log("values", this.recipeItem);
+  recipeItem: any = {
+    title: "",
+    description: "",
+    foodType: ""
+  };
+  onSubmit() {
+    console.log('Form submitted:', this.recipeItem);
   }
 }
