@@ -4,6 +4,7 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { RecipeCardComponent } from './pages/recipe-card/recipe-card.component';
+import { AuthComponent } from "./pages/auth/auth.component";
 
 
 @Component({
@@ -14,8 +15,9 @@ import { RecipeCardComponent } from './pages/recipe-card/recipe-card.component';
     NavbarComponent,
     FooterComponent,
     HomePageComponent,
-    RecipeCardComponent
-  ],
+    RecipeCardComponent,
+    AuthComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
