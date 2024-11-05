@@ -2,7 +2,7 @@
 
     <div class="container">
 
-        <div class="cover" [ngClass]="{'route-active':'isRegister'}">
+        <div class="cover" [ngClass]="{'rotate-active':isRegister}">
 
             <div class="front">
                 <img src="https://content.jdmagicbox.com/v2/comp/chennai/d7/044pxx44.xx44.211113032123.q8d7/catalogue/food-hub-anna-nagar-west-chennai-chinese-fast-food-delivery-services-cfmh8gjis9-250.jpg"
@@ -71,6 +71,12 @@
                             </button>
                         </div>
                     </form>
+                    <div class="flex items-center gap-2 justify-center mt-9">
+                        have account? <button
+                        (click)="togglePanel()"
+                        mat-button 
+                        color="cadetblue"> Login</button>
+                    </div>
                 </div>
 
                 <div class="signup-form">
@@ -108,6 +114,13 @@
                             </button>
                         </div>
                     </form>
+
+                    <div class="flex items-center gap-2 justify-center mt-9">
+                        Don't have account? <button
+                        (click)="togglePanel()"
+                        mat-button 
+                        color="cadetblue"> Signup</button>
+                    </div>
                 </div>
 
             </div>
