@@ -1,4 +1,3 @@
-import { A, C } from '@angular/cdk/keycodes';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
@@ -9,6 +8,7 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 export class AuthServiceService {
 
   private baseUrl = 'http://localhost:6010'
+  
 
   constructor(private http:HttpClient) { }
 
@@ -29,7 +29,7 @@ export class AuthServiceService {
       Authorization: `Bearer ${localStorage.getItem('jwt')}`
     })
     return this.http
-    .get<any>(`${this.baseUrl}/auth/profile`,{headers})
+    .get<any>(`${this.baseUrl}/auth/users/profile`,{headers})
     .pipe(
       tap((user)=>{
         const currentState = this.authSub.value;

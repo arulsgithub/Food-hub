@@ -2,7 +2,6 @@ package com.arulJD.service;
 
 import com.arulJD.entity.User;
 
-import java.util.List;
 
 public interface UserService {
 

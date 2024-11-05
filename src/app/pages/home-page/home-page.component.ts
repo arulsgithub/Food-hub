@@ -4,6 +4,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateRecipeFormComponent } from '../create-recipe-form/create-recipe-form.component';
+import { AuthServiceService } from '../../services/AuthService/auth-service.service';
 
 
 @Component({
@@ -20,8 +21,9 @@ import { CreateRecipeFormComponent } from '../create-recipe-form/create-recipe-f
 export class HomePageComponent {
   recipes = [1,2,3,4,5,6,7,8];
 
-  constructor( public dialog: MatDialog) { }
+  constructor( public dialog: MatDialog, public authService: AuthServiceService) { }
   handleRecipeForm(){
     this.dialog.open(CreateRecipeFormComponent);
   }
+
 }
