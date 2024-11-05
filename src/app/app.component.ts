@@ -19,7 +19,7 @@ import { AuthComponent } from "./pages/auth/auth.component";
     AuthComponent
 ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'food-hub';

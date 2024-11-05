@@ -3,6 +3,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "FoodHubApplication",
+      "request": "launch",
+      "mainClass": "com.arulJD.FoodHubApplication",
+      "projectName": "Food-Hub"
+    },
+    {
       "name": "ng serve",
       "type": "chrome",
       "request": "launch",

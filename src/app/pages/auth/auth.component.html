@@ -5,7 +5,7 @@
         <div class="cover" [ngClass]="{'route-active':'isRegister'}">
 
             <div class="front">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH1uhiMyRHSFJbtew3lT_EH1ayL6O4zTC8MQ&s"
+                <img src="https://content.jdmagicbox.com/v2/comp/chennai/d7/044pxx44.xx44.211113032123.q8d7/catalogue/food-hub-anna-nagar-west-chennai-chinese-fast-food-delivery-services-cfmh8gjis9-250.jpg"
                     alt="" />
 
                 <div class="text">
@@ -18,7 +18,7 @@
 
             <div class="back">
 
-                <img src="https://content.jdmagicbox.com/v2/comp/chennai/d7/044pxx44.xx44.211113032123.q8d7/catalogue/food-hub-anna-nagar-west-chennai-chinese-fast-food-delivery-services-cfmh8gjis9-250.jpg"
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH1uhiMyRHSFJbtew3lT_EH1ayL6O4zTC8MQ&s"
                     alt="" />
             </div>
         </div>
@@ -31,44 +31,80 @@
                     <h2 class="text-lg text-center font-bold pb-8">
                         Signup
                     </h2>
-                    <form (ngSubmit)="onSubmit()" class="">
+                    <form 
+                    [formGroup]="registrationForm"
+                    (ngSubmit)="handleRegistration()" class="">
                         <div class="mb-4">
                             <mat-form-field class="w-full">
-                                <mat-label class="text-gray-200">Title</mat-label>
+                                <mat-label class="text-gray-200">Fullname</mat-label>
                                 <input
-                                    matInput placeholder="Ex. Pizza"
-                                    name="title"
-                                    [(ngModel)]= "recipeItem.title"
+                                    matInput placeholder=""
+                                    formControlName="fullname"
                                     class="py-2 px-3 text-gray-200 mt-1 focus:shadow-outline"
                                 />
                               </mat-form-field>
                         </div>
                         <div class="mb-4">
                             <mat-form-field class="w-full">
-                                <mat-label class="text-gray-200">Description</mat-label>
+                                <mat-label class="text-gray-200">Email</mat-label>
                                 <input
-                                    matInput placeholder="write about food"
-                                    name="description"
-                                    [(ngModel)]= "recipeItem.description"
+                                    matInput placeholder=""
+                                    formControlName="email"
                                     class="py-2 px-3 text-gray-200 mt-1 focus:shadow-outline"
                                 />
                               </mat-form-field>
                         </div> 
                         <div class="mb-4">
                             <mat-form-field class="w-full">
-                                <mat-label class="text-gray-200">Image</mat-label>
+                                <mat-label class="text-gray-200">Password</mat-label>
                                 <input
-                                    matInput placeholder="Image url"
-                                    name="image"
-                                    [(ngModel)]= "recipeItem.image"
+                                    matInput placeholder=""
+                                    formControlName="password"
                                     class="py-2 px-3 text-gray-200 mt-1 focus:shadow-outline"
                                 />
                               </mat-form-field>
                         </div>
                     
                         <div>
-                            <button mat-raised-button color="#5f9ea0" type="submit">
+                            <button class="w-full" style="background-color: cadetblue; color: black;" mat-raised-button type="submit">
                                 Create
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="signup-form">
+                    <h2 class="text-lg text-center font-bold pb-8">
+                        Login
+                    </h2>
+                    <form 
+                    [formGroup]="loginForm"
+                    (ngSubmit)="handleLogin()" class="">
+                    
+                        <div class="mb-4">
+                            <mat-form-field class="w-full">
+                                <mat-label class="text-gray-200">Email</mat-label>
+                                <input
+                                    matInput placeholder=""
+                                    formControlName="email"
+                                    class="py-2 px-3 text-gray-200 mt-1 focus:shadow-outline"
+                                />
+                              </mat-form-field>
+                        </div> 
+                        <div class="mb-4">
+                            <mat-form-field class="w-full">
+                                <mat-label class="text-gray-200">Password</mat-label>
+                                <input
+                                    matInput placeholder=""
+                                    formControlName="password"
+                                    class="py-2 px-3 text-gray-200 mt-1 focus:shadow-outline"
+                                />
+                              </mat-form-field>
+                        </div>
+                    
+                        <div>
+                            <button class="w-full" style="background-color: cadetblue; color: black;" mat-raised-button type="submit">
+                                Login
                             </button>
                         </div>
                     </form>
