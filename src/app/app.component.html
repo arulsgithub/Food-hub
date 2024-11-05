@@ -1,8 +1,13 @@
 <div>
   <div class="min-h-[90vh]">
-    <!-- <app-navbar/> -->
+    <app-navbar/>
     <!-- <app-home-page/> -->
-     <app-auth/>
+
+    @if(user){
+     <app-home-page/>
+    } @else {
+      <app-auth/>
+    }
   </div>
   <!-- <app-footer/>   -->
 </div>

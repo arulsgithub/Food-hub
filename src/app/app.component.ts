@@ -33,5 +33,10 @@ export class AppComponent {
       next:data=>console.log("req user", data),
       error:err=>console.log("req user error", err)
     });
+    this.authService.authSub.subscribe(
+    (auth)=>{
+        console.log("auth state", auth)
+        this.user = auth.user
+    })
   }
 }

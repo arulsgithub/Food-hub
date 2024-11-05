@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { AuthServiceService } from '../../services/AuthService/auth-service.service';
+import { Route, Router } from '@angular/router';
+import { routes } from '../../app.routes';
 
 @Component({
   selector: 'app-navbar',
@@ -11,5 +14,19 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+  user:any=null;
 
+  constructor(public authService: AuthServiceService,private router: Router){}
+  ngOnInit(){
+    this.authService.authSub.subscribe(
+    (auth)=>{
+        console.log("auth state", auth)
+        this.user = auth.user
+    })
+  }
+
+  handleLogout = () => {
+    this.authService.logout();
+    this.router.navigate(["/"])
+  }
 }
