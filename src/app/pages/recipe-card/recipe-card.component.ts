@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialog } from '@angular/material/dialog';
@@ -17,6 +17,8 @@ import { UpdateRecipeFormComponent } from '../update-recipe-form/update-recipe-f
   styleUrl: './recipe-card.component.scss'
 })
 export class RecipeCardComponent {
+
+  @Input() recipe: any
   constructor(public dialog: MatDialog) { }
 
   handleEditRecipeForm(){

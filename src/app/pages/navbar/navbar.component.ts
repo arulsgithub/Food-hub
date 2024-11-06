@@ -3,9 +3,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { AuthServiceService } from '../../services/AuthService/auth-service.service';
-import { Route, Router } from '@angular/router';
-import { routes } from '../../app.routes';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   standalone: true,

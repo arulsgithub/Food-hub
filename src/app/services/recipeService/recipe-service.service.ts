@@ -72,13 +72,13 @@ export class RecipeServiceService {
     return this.http
     .delete(`${this.baseUrl}/api/recipes/${id}`,{headers})
     .pipe(
-      tap((deletedRecipe:any)=>{
+      tap((id:any)=>{
         const currentState = this.recipeSub.value;
-        const updatedRecipes = currentState.recipes.filter
+        const deletedRecipe = currentState.recipes.filter
         ((item:any)=>
           item.id !== id
         );
-        this.recipeSub.next({...currentState, recipe:updatedRecipes})
+        this.recipeSub.next({...currentState, recipe:deletedRecipe})
       }
     ));
   }
